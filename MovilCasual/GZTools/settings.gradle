@@ -1,0 +1,3 @@
+include ':GZLogger'
+include ':app'
+rootProject.name = "GZTools"

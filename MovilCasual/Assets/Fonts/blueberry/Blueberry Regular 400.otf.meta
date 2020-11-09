@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 930e8729fa56f9c499378d95fb3207d7
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Blueberry
+  fontNames:
+  - Blueberry
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 70a6bb3350988f14ea93a18c9b7d3eea, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
