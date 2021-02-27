@@ -17,6 +17,8 @@ public class ball : MonoBehaviour
     private Vector2 savePosition;
     private bool StartPoint = true;
     private AudioSource aud;
+    private Vector3 pos;
+    private Vector3 dist;
     private void Start()
     {
         aud = GetComponent<AudioSource>();
@@ -25,16 +27,16 @@ public class ball : MonoBehaviour
     }
     void Update()
     {
-        float dist = Vector2.Distance(Camera.main.ScreenToWorldPoint(Input.mousePosition), GetComponent<SpringJoint2D>().connectedBody.position);
+        //float dist = Vector3.Distance(Camera.main.ScreenToWorldPoint(Input.mousePosition), GetComponent<SpringJoint2D>().connectedBody.position);
         if (isPressed && GameManager.instance.GetPlay())
         {
-            if (dist < maxDistance)
+            pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            dist = pos - GetComponent<SpringJoint2D>().connectedBody.transform.position;
+            if (dist.magnitude > maxDistance)
             {
-                rb.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                savePosition = rb.position;
+                dist = dist.normalized * maxDistance;
             }
-            else
-                rb.position = savePosition;
+            rb.position = dist + GetComponent<SpringJoint2D>().connectedBody.transform.position;
         }
         else if(!changePoint && enter)
         {
